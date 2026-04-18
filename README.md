@@ -1,2 +1,0 @@
-# intertecmate-
-company official site 
