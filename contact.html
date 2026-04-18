@@ -59,7 +59,7 @@ intertecmate@gmail.com
 
 <div class="contact-form-wrapper">
 
-<form class="contact-form" action="backend/contact.php" method="POST">
+ <form class="contact-form" id="contact-form">
 
 <input type="text" name="name" placeholder="Full Name" required>
 
@@ -93,6 +93,44 @@ intertecmate@gmail.com
 © 2026 Intertechmate | Digital Marketing Agency
 </p>
 </footer>
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
+<script>
+(function(){
+  emailjs.init("YOUR_PUBLIC_KEY"); // from EmailJS
+})();
+</script>
+ <script>
+document.getElementById("contact-form").addEventListener("submit", function(e) {
+  e.preventDefault(); // stops page reload
+
+  emailjs.sendForm("service_5r7trjt", "template_hbd9gq8", this)
+    .then(function() {
+      alert("Message sent successfully!");
+    }, function(error) {
+      alert("Failed to send message.");
+      console.log(error);
+    });
+});
+</script>
+ <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+(function(){
+  emailjs.init("O_QGqckrOFtJHwxGj"); // replace this
+})();
+
+document.getElementById("contact-form").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  emailjs.sendForm("service_5r7trjt", "template_hbd9gq8", this)
+    .then(function() {
+      alert("Message sent successfully!");
+    }, function(error) {
+      alert("Failed to send message.");
+      console.log(error);
+    });
+});
+</script>
 </body>
 </html>
